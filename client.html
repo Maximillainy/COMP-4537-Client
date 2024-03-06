@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <button onclick="insertDefaultSQL()">Insert Default SQL</button>
+  <form>
+    <textarea id="SQLquery" name="SQLquery"></textarea>
+    <button type="submit" onclick="">Submit</button>
+  </form>
+
+  <script>
+    const defaultInsertSQL = "INSERT INTO patient ('name', 'dateOfBirth') \
+      VALUES \
+      ('Sara Brown', '1901-01-01'), \
+      ('John Smith', '1941-01-01'), \
+      ('Jack Ma', '1961-01-30'), \
+      ('Elon Musk', '1999-01-01');";
+
+    function insertDefaultSQL() {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://localhost:3000/insert/comp4537/lab5/api/v1/query', true);
+      xhr.setRequestHeader('Content-Type', 'text/plain');
+      xhr.send(defaultInsertSQL);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+
+          } else {
+          }
+        }
+      };
+    }
+
+    function selectSQL(SQLquery) {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://localhost:3000/select/comp4537/lab5/api/v1/query', true);
+      xhr.setRequestHeader('Content-Type', 'text/plain');
+      xhr.send(SQLquery);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log(xhr.responseText);
+          } else {
+          }
+        }
+      };
+    }
+
+  </script>
+</body>
+</html>
