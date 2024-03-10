@@ -1,5 +1,6 @@
 const ErrorMessage = 'Error sending request, request must start with SELECT or INSERT';
-const ServerError = 'Error in SQL syntax or denied request';
+const ServerError = 'Server Error Sending Request';
+const InsertSuccess = 'Data Inserted Successfully';
 const DefaultQuery = 'SELECT * FROM patient';
 const DefaultInsertButton = 'Insert Default Data';
 const SendRequestButton = 'Run SQL';
