@@ -3,16 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>COMP 4537 Lab 5 - Client</title>
 </head>
 <body>
-  <button onclick="insertDefaultSQL()">Insert Default SQL</button>
+  <br>
+  <div id="insertDefaultSQL"></div>
+  <br>
+  <div id="userSQLQuery"></div>
+  <br>
+  <div id="response"></div>
+  <!-- <button onclick="insertDefaultSQL()">Insert Default SQL</button>
   <form>
     <textarea id="SQLquery" name="SQLquery"></textarea>
     <button type="submit" onclick="">Submit</button>
-  </form>
+  </form> -->
 
-  <script>
+  <script src="lang/messages/en/user.js"></script>
+  <script src="js/sql.js"></script>
+  <!-- <script>
     const defaultInsertSQL = "INSERT INTO patient ('name', 'dateOfBirth') \
       VALUES \
       ('Sara Brown', '1901-01-01'), \
@@ -50,6 +58,6 @@
       };
     }
 
-  </script>
+  </script> -->
 </body>
 </html>
