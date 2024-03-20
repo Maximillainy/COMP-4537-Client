@@ -34,7 +34,8 @@ class sqlRequest {
     }
 
     handleUserReq(SQLquery) {
-        const queryType = SQLquery.trim().split(' ')[0].toUpperCase().replace(/%/g, '%25');
+        const queryType = SQLquery.trim().split(' ')[0].toUpperCase();
+        SQLquery = SQLquery.replace(/%/g, '%25');
 
         if (queryType === 'INSERT') {
             console.log('sending POST request');
